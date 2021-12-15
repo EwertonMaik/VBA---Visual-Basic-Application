@@ -23,7 +23,7 @@ Public Function fnConverterUTF8(ByVal Texto_para_converter As String)
 		'Estrutura condicional IF para validar se o tamanho da String e maior que 127
         If iChar > 127 Then
             If Not iChar And 32 Then
-            iChar2 = Asc(Mid(Texto_para_converter, l + 1, 1))
+            iChar2 = Asc( Mid(Texto_para_converter, l + 1, 1))
             sUTF8 = sUTF8 & ChrW$(((31 And iChar) * 64 + (63 And iChar2)))
             l = l + 1
         Else

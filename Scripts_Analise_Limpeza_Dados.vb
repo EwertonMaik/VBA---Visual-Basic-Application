@@ -7,7 +7,7 @@ Public Function fnConverterUTF8(ByVal Texto_para_converter As String)
 	
 	'Criacao e Definicao das Variaveis utilizadas na Funcao
     Dim l As Long, sUTF8 As String
-    Dim iChar As Integer
+    Dim iChar  As Integer
     Dim iChar2 As Integer
     
 	'Metodo que torna a funcao volatil, recalcula automaticamente sempre que houver edicao na celula
@@ -44,19 +44,23 @@ End Function
 
 
 ' Funcao para remover tipos de acentuacao de uma string
+'Funcao Publica que recebe parametro de uma variavel string
 Function fnRetirarAcentos(ByVal vStrPalavra As String) As String
-    Dim lstrEspecial    As String
+    
+	'Criacao e Definicao das Variaveis utilizadas na Funcao
+	Dim lstrEspecial    As String
     Dim lstrSubstituto  As String
     Dim lstrAlterada    As String
     Dim liControle      As Integer
     Dim liPosicao       As Integer
     Dim lstrLetra       As String
     
+	'Metodo que torna a funcao volatil, recalcula automaticamente sempre que houver edicao na celula
     Application.Volatile
-
+	
+	'Definido variaveis e atribuindo diretamente seu valor String
     lstrEspecial = "àáâãäèéêëìíîïòóôõöùúûüÀÁÂÃÄÈÉÊËÌÍÎÒÓÔÕÖÙÚÛÜçÇñÑ"
     lstrSubstituto = "aaaaaeeeeiiiiooooouuuuAAAAAEEEEIIIOOOOOUUUUcCnN"
- 
     lstrAlterada = ""
  
     If vStrPalavra <> "" Then
@@ -73,4 +77,5 @@ Function fnRetirarAcentos(ByVal vStrPalavra As String) As String
         
         fnRetirarAcentos = lstrAlterada
     End If
+	
 End Function
